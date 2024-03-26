@@ -1,10 +1,45 @@
-﻿namespace OperatorExercise
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace OperatorExercise
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int a = 17;
+            int b = 4;
+            var sum = a += b;
+            Console.WriteLine(sum);
+            var sub = a -= b;
+            Console.WriteLine(sub);
+            var mult = (a * b);
+            Console.WriteLine(mult);
+            int quotent = a / b;
+            Console.WriteLine(quotent);
+            int remainder = a % b;
+            Console.WriteLine(remainder);
+
+            Console.WriteLine($"{sum} is the addition of {a} and {b}," +
+                $"{sub} is the subtraction of {a} and {b}," +
+                $"and {mult} is the multiplication of {a} and {b}," +
+                $"and {quotent} is the division of {a} and {b}," +
+                $"and {remainder} is the modulus of {a} and {b}");
+
+            Console.WriteLine("What is the radius of your circle?");
+            double radius = double.Parse(Console.ReadLine());
+            double answer = AreaOfCircle(radius);
+            Console.WriteLine($"The area of the circle with radies of {radius} is {answer}");
+
+
+
+
+
+        }
+        public static double AreaOfCircle(double radius)
+        {
+            double answer = Math.PI * Math.Pow(radius, 2);
+            return answer;
         }
     }
 }
+
